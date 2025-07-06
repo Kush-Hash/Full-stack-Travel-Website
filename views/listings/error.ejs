@@ -1,0 +1,12 @@
+<% layout("/layouts/errorplate") %>
+
+<div class="d-flex justify-content-center align-items-center vh-100">
+  <div class="alert alert-danger text-center p-5 rounded-3 shadow">
+    <h1 class="display-4 fw-bold">
+      Error <span class="text-muted"> <%= err.status %> ! </span>
+    </h1>
+    <h4 class="mb-3">Something went wrong!</h4>
+    <p class="mb-4"><%= err.message %></p>
+    <a href="/listings" class="btn btn-outline-light bg-danger">Go Back Home</a>
+  </div>
+</div>

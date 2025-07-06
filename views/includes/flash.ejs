@@ -1,0 +1,52 @@
+<style>
+  .flash-message {
+    position: fixed;
+    top: 70px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 9999;
+    min-width: 250px;
+    text-align: center;
+  }
+</style>
+<% if (success && success.length) { %>
+<div class="d-flex justify-content-center">
+  <div
+    class="alert alert-success alert-dismissible fade show w-50 flash-message"
+    role="alert"
+  >
+    <%= success %>
+    <button
+      type="button"
+      class="btn-close"
+      data-bs-dismiss="alert"
+      aria-label="Close"
+    ></button>
+  </div>
+</div>
+<% } %> <% if (error && error.length) { %>
+<div class="d-flex justify-content-center">
+  <div
+    class="alert alert-danger alert-dismissible fade show w-50 flash-message"
+    role="alert"
+  >
+    <%= error %>
+    <button
+      type="button"
+      class="btn-close"
+      data-bs-dismiss="alert"
+      aria-label="Close"
+    ></button>
+  </div>
+</div>
+<% } %>
+
+<script>
+  setTimeout(() => {
+    document.querySelectorAll(".flash-message").forEach((el) => {
+      el.style.transition = "opacity 0.5s";
+      el.style.opacity = 0;
+      setTimeout(() => el.remove(), 500);
+    });
+  }, 1500); // 3.5 seconds
+</script>

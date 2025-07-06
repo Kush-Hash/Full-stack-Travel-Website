@@ -1,0 +1,85 @@
+<style>
+  .btn-search {
+    background-color: #fe424d;
+    color: white;
+    border-radius: 1.5rem;
+  }
+  .btn-search:hover {
+    background-color: #fe424d;
+    color: white;
+  }
+  .btn-search i {
+    display: inline;
+    margin-right: 5px;
+  }
+  .search-input {
+    border-radius: 1.5rem;
+    padding: 0.5rem 2rem 0.5rem 2rem;
+    width: 20rem;
+    font-size: 0.9rem;
+  }
+  .search-input:focus {
+    box-shadow: 0 0 0 0.2rem rgba(254, 66, 77, 0.25);
+    border-color: #fe424d;
+  }
+</style>
+<nav
+  class="navbar navbar-expand-lg bg-body-light border-bottom sticky-top mb-4"
+>
+  <div class="container-fluid">
+    <a class="navbar-brand ms-4" href="/listings"
+      ><i class="fa-solid fa-earth-americas"></i
+    ></a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarNavAltMarkup"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav ms-2">
+        <a class="nav-link" href="/listings">Explore</a>
+      </div>
+
+      <div class="navbar-nav ms-auto">
+        <form class="form-inline d-flex" method="GET" action="/listings">
+          <input
+            class="form-control me-2 search-input"
+            type="search"
+            name="search"
+            placeholder="Search destinations"
+            aria-label="Search"
+            value="<%= typeof search !== 'undefined' ? search : '' %>"
+          />
+          <button class="btn btn-search" type="submit">
+            <i class="fa-solid fa-magnifying-glass"></i>Search
+          </button>
+        </form>
+      </div>
+
+      <div class="navbar-nav ms-auto">
+        <a class="nav-link me-3" href="/listings/new">Become a Host</a>
+        <% if(!currUsr){ %>
+        <form action="/register">
+          <button class="btn-outline-dark btn ouline-btn-red me-3">
+            Register
+          </button>
+        </form>
+        <form action="/login">
+          <button class="btn-outline-dark btn ouline-btn-red me-3">
+            login
+          </button>
+        </form>
+        <%}%> <%if(currUsr){%>
+        <form action="/logout">
+          <button class="btn-outline-dark btn ouline-btn-red me-3">
+            Logout
+          </button>
+        </form>
+        <%}%>
+      </div>
+    </div>
+  </div>
+</nav>

@@ -1,0 +1,23 @@
+<% layout("/layouts/boilerplate") %>
+<div class="row justify-content-center form-container">
+  <div class="card p-4 col-5 shadow form-inside-container">
+    <form method="POST" action="/login" novalidate class="needs-validation">
+      <div class="mb-2">
+        <label for="username" class="form-label"> Username </label>
+        <input type="text" name="username" class="form-control" required />
+      </div>
+      <div class="mb-2">
+        <label for="password" class="form-label">Enter Password</label>
+        <input type="password" name="password" class="form-control" required />
+      </div>
+      <br />
+      <button class="btn btn-dark add-btn w-100">Login</button>
+    </form>
+
+    <!-- Register link -->
+    <div class="text-center mt-3">
+      <p class="mb-0">Don't have an account?</p>
+      <a href="/register" class="btn btn-outline-secondary mt-1">Register</a>
+    </div>
+  </div>
+</div>
