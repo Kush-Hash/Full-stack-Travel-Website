@@ -27,7 +27,8 @@
         </p>
 
         <div class="show-page-btns">
-          <% if(currUsr && listing.owner._id.equals(currUsr._id)){ %>
+          <% if(currUsr && listing.owner && listing.owner._id &&
+          listing.owner._id.equals && listing.owner._id.equals(currUsr._id)){ %>
           <button
             onclick="window.location.href='http://localhost:8081/listings/<%=listing.id%>/edit'"
             class="btn btn-dark add-btn"
