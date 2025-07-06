@@ -86,7 +86,9 @@ app.use((req, res, next) => {
 //     res.send("Hi I am root");
 // })
 
-
+app.get('/', (req, res) => {
+    res.redirect('/listings'); // or render a homepage
+});
 //using express router
 app.use("/listings", listingRouter);
 app.use("/listings/:id/reviews", reviewRouter);
