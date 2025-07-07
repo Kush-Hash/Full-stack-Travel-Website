@@ -39,18 +39,18 @@ A full-stack web application inspired by Airbnb, where users can explore, list, 
 - MongoDB Atlas for cloud database  
 
 ## 📂 Project Structure
-├── app.js # Main application file
-├── models/ # Mongoose schemas (User, Listing, Review)
-├── controllers/ # Route logic
-├── routes/ # Express routes
-├── views/ # EJS templates
-├── public/ # Static assets (CSS, client-side JS)
-├── utils/ # Utility functions & error handler
-├── middleware.js # Custom middleware
-├── cloudConfig.js # Cloudinary config
-├── SchemaValidation/ # Joi validation schemas
-├── init/ # Database seeding scripts
-├── .env.example # Example environment variables
+├── app.js # Main application file <br>
+├── models/ # Mongoose schemas (User, Listing, Review) <br>
+├── controllers/ # Route logic<br>
+├── routes/ # Express routes<br>
+├── views/ # EJS templates<br>
+├── public/ # Static assets (CSS, client-side JS)<br>
+├── utils/ # Utility functions & error handler<br>
+├── middleware.js # Custom middleware<br>
+├── cloudConfig.js # Cloudinary config<br>
+├── SchemaValidation/ # Joi validation schemas<br>
+├── init/ # Database seeding scripts<br>
+├── .env.example # Example environment variables<br>
 
 
 ## ⚙️ Environment Variables
@@ -65,7 +65,7 @@ CLOUD_API_KEY=your_cloudinary_api_key
 CLOUD_API_SECRET=your_cloudinary_api_secret
 MAP_TOKEN=your_mapbox_access_token
 ```
-git clone https://github.com/yourusername/your-repo-name.git
-cd your-repo-name
-npm install
-node app.js
+git clone https://github.com/yourusername/your-repo-name.git<br>
+cd your-repo-name<br>
+npm install<br>
+node app.js<br>
