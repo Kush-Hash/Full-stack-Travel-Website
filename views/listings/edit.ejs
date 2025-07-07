@@ -3,11 +3,12 @@
   <div class="card p-4 col-5 shadow">
     <form
       method="POST"
-      action="/listings/<%= listing.id %>/edit?_method=PUT"
+      action="/listings/<%= listing.id %>/edit"
       novalidate
       class="needs-validation"
       enctype="multipart/form-data"
     >
+      <input type="hidden" name="_method" value="PUT" />
       <div class="mb-2">
         <label for="listing[title]" class="form-label"
           >Enter the New Title</label
