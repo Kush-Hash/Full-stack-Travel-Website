@@ -29,23 +29,18 @@
         <div class="show-page-btns">
           <% if(currUsr && listing.owner && listing.owner._id &&
           listing.owner._id.equals && listing.owner._id.equals(currUsr._id)){ %>
-          <button
-            onclick="window.location.href='http://localhost:8081/listings/<%=listing.id%>/edit'"
+          <a
+            href="/listings/<%= listing.id %>/edit"
             class="btn btn-dark add-btn"
           >
             Edit
-          </button>
+          </a>
           <form method="POST" action="/listings/<%=listing.id%>?_method=DELETE">
             <button class="btn btn-outline-dark">Delete</button>
           </form>
           <% } %>
 
-          <button
-            onclick="window.location.href='http://localhost:8081/listings'"
-            class="btn btn-dark add-btn"
-          >
-            Return to Home
-          </button>
+          <a href="/listings" class="btn btn-dark add-btn"> Home </a>
         </div>
       </div>
     </div>
