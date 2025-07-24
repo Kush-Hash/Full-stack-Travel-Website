@@ -22,10 +22,15 @@
     box-shadow: 0 0 0 0.2rem rgba(254, 66, 77, 0.25);
     border-color: #fe424d;
   }
+  .hosting-button {
+    border-radius: 2rem;
+    padding: 0.5rem 1rem !important ;
+  }
+  .hosting-button:hover {
+    background-color: #fe424f42;
+  }
 </style>
-<nav
-  class="navbar navbar-expand-lg bg-body-light border-bottom sticky-top mb-4"
->
+<nav class="navbar navbar-expand-lg bg-body-light border-bottom sticky-top">
   <div class="container-fluid">
     <a class="navbar-brand ms-4" href="/listings"
       ><i class="fa-solid fa-earth-americas"></i
@@ -60,7 +65,9 @@
       </div>
 
       <div class="navbar-nav ms-auto">
-        <a class="nav-link me-3" href="/listings/new">Become a Host</a>
+        <a class="nav-link me-3 hosting-button" href="/listings/new"
+          >Become a Host</a
+        >
         <% if(!currUsr){ %>
         <form action="/register">
           <button class="btn-outline-dark btn ouline-btn-red me-3">

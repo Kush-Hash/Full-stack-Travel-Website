@@ -54,29 +54,6 @@ module.exports.showListing = async (req, res) => {
 };
 
 // Add Listing Route
-// module.exports.addNewListing = async (req, res) => {
-
-//     let mapResponse = await geocodingClient.forwardGeocode({
-//         query: req.body.listing.location,
-//         limit: 1
-//     })
-//         .send()
-
-//     const url = req.file.path;
-//     const filename = req.file.filename;
-//     // console.log(url, "...", filename);
-//     const newListing = new Listing(req.body.listing);
-//     newListing.owner = req.user._id;
-//     newListing.image = { url, filename };
-//     newListing.geometry = mapResponse.body.features[0].geometry;
-//     let savedListing = await newListing.save();
-//     console.log(savedListing);
-//     req.flash("success", "New Listing Created");
-//     // console.log("Listing successful", newListing);
-//     res.redirect("/listings");
-// };
-
-// Categor
 module.exports.addNewListing = async (req, res) => {
 
     let mapResponse = await geocodingClient.forwardGeocode({

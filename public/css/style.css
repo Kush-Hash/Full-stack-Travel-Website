@@ -1,5 +1,12 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
     font-family: "Plus Jakarta Sans", sans-serif !important;
+    overflow-x: hidden;
 }
 
 nav {
@@ -23,13 +30,18 @@ nav {
     color: #222222 !important;
 }
 
+
 footer {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    background-color: #ebebeb;
+    gap: 1rem;
+    background-color: black;
+    color: #fff;
     padding: 15px;
+    font-size: 0.85rem;
+    height: 20vh;
 }
 
 .footer-info-socials {
@@ -42,7 +54,7 @@ footer {
 
 .footer-info-links a {
     text-decoration: none;
-    color: #222222;
+    color: whitesmoke;
     padding-left: 10px;
 }
 
