@@ -104,6 +104,7 @@ app.use("/", userRouter);
 
 //For all routes except the mentioned ones
 app.all(/.*/, (req, res, next) => {
+    console.log("🔍 Unmatched Path:", req.originalUrl);
     const err = new ExpressError(404, "Page not Found!");
     next(err);
 });

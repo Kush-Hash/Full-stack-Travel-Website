@@ -209,13 +209,16 @@
     </a>
   </div>
   <div class="filter">
-    <a class="filter-link" href="/listings/home?category=rooms">
+    <a class="filter-link" href="/listings/home?category=rooms&scroll=true">
       <div><i class="fa-solid fa-bed"></i></div>
       <p>Rooms</p>
     </a>
   </div>
   <div class="filter">
-    <a class="filter-link" href="/listings/home?category=famous_city">
+    <a
+      class="filter-link"
+      href="/listings/home?category=famous_city&scroll=true"
+    >
       <div>
         <i class="fa-solid fa-landmark-dome"></i>
       </div>
@@ -223,7 +226,7 @@
     </a>
   </div>
   <div class="filter">
-    <a class="filter-link" href="/listings/home?category=mountain">
+    <a class="filter-link" href="/listings/home?category=mountain&scroll=true">
       <div>
         <i class="fa-solid fa-mountain"></i>
       </div>
@@ -231,7 +234,7 @@
     </a>
   </div>
   <div class="filter">
-    <a class="filter-link" href="/listings/home?category=beach">
+    <a class="filter-link" href="/listings/home?category=beach&scroll=true">
       <div>
         <i class="fa-solid fa-umbrella-beach"></i>
       </div>
@@ -239,7 +242,7 @@
     </a>
   </div>
   <div class="filter">
-    <a class="filter-link" href="/listings/home?category=artic">
+    <a class="filter-link" href="/listings/home?category=artic&scroll=true">
       <div>
         <i class="fa-solid fa-snowman"></i>
       </div>
@@ -247,7 +250,7 @@
     </a>
   </div>
   <div class="filter">
-    <a class="filter-link" href="/listings/home?category=palace">
+    <a class="filter-link" href="/listings/home?category=palace&scroll=true">
       <div>
         <i class="fa-solid fa-chess-rook"></i>
       </div>
@@ -255,7 +258,7 @@
     </a>
   </div>
   <div class="filter">
-    <a class="filter-link" href="/listings/home?category=pools">
+    <a class="filter-link" href="/listings/home?category=pools&scroll=true">
       <div>
         <i class="fa-solid fa-person-swimming"></i>
       </div>
@@ -263,19 +266,19 @@
     </a>
   </div>
   <div class="filter">
-    <a class="filter-link" href="/listings/home?category=camping">
+    <a class="filter-link" href="/listings/home?category=camping&scroll=true">
       <div><i class="fa-solid fa-campground"></i></div>
       <p>Camping</p>
     </a>
   </div>
   <div class="filter">
-    <a class="filter-link" href="/listings/home?category=farm">
+    <a class="filter-link" href="/listings/home?category=farm&scroll=true">
       <div><i class="fa-solid fa-cow"></i></div>
       <p>Farm</p>
     </a>
   </div>
   <div class="filter">
-    <a class="filter-link" href="/listings/home?category=forests">
+    <a class="filter-link" href="/listings/home?category=forests&scroll=true">
       <div><i class="fa-solid fa-tree"></i></div>
       <p>Forests</p>
     </a>
@@ -364,5 +367,14 @@
         noteSpan.innerHTML = "";
       }
     });
+  });
+  window.addEventListener("DOMContentLoaded", () => {
+    const params = new URLSearchParams(window.location.search);
+    if (params.get("scroll") === "true") {
+      const section = document.getElementById("filters");
+      if (section) {
+        section.scrollIntoView({ behavior: "smooth" });
+      }
+    }
   });
 </script>
