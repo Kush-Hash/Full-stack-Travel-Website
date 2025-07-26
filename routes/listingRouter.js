@@ -9,7 +9,7 @@ const upload = multer({ storage });
 const router = express.Router({ mergeParams: true });
 
 
-router.get('/', wrapAsync(listingController.indexPage));
+router.get('/home', wrapAsync(listingController.indexPage));
 
 router.get('/new', isLoggedIn, listingController.renderNewForm)
 

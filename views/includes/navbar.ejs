@@ -11,9 +11,10 @@
     height: 4rem;
   }
   .btn-search {
-    background-color: #fe424d;
+    background-color: transparent;
     color: white;
     border-radius: 1.5rem;
+    border: 1px solid white;
   }
   .btn-search:hover {
     background-color: #fe424d;
@@ -27,12 +28,44 @@
     border-radius: 1.5rem;
     padding: 0.5rem 2rem 0.5rem 2rem;
     width: 20rem;
-    font-size: 0.9rem;
+    font-size: 1rem;
+    background-color: transparent;
+    border: 1px solid white;
+    color: #e0e0e0;
+  }
+  .search-input::placeholder {
+    color: #fff;
   }
   .search-input:focus {
+    background-color: transparent;
+    color: #fff;
+    box-shadow: 0 0 0 0.2rem rgba(240, 237, 237, 0.25);
+    border-color: #fff;
+  }
+  .navbar-solid .search-input {
+    background-color: #fff;
+    border: 0.5px solid rgba(0, 0, 0, 0.231);
+    color: black;
+  }
+  .navbar-solid .search-input::placeholder {
+    color: rgba(0, 0, 0, 0.425);
+  }
+  .navbar-solid .search-input:focus {
+    color: black;
     box-shadow: 0 0 0 0.2rem rgba(254, 66, 77, 0.25);
     border-color: #fe424d;
   }
+  .navbar-solid .btn-search {
+    background-color: white;
+    color: black;
+    border: 1px solid rgba(0, 0, 0, 0.256);
+  }
+  .navbar-solid .btn-search:hover {
+    background-color: #fe424d;
+    color: white;
+    border: none;
+  }
+
   .home {
     color: white !important;
     transition: transform 0.2s ease-in;
@@ -74,13 +107,28 @@
     color: white !important;
     border-color: #fe424d !important;
   }
+  @keyframes fadeInDown {
+    0% {
+      opacity: 0;
+      transform: translateY(-30px); /* starts above */
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0); /* comes to original position */
+    }
+  }
+  nav {
+    opacity: 0; /* Start hidden */
+    animation: fadeInDown 0.9s ease-out forwards;
+    animation-delay: 0.3s;
+  }
 </style>
 <nav
   id="mainNavbar"
   class="navbar navbar-expand-lg <%= isHome ? 'navbar-transparent fixed-top' : 'navbar-solid sticky-top shadow-sm' %>"
 >
   <div class="container-fluid">
-    <a class="navbar-brand ms-4" href="/listings"
+    <a class="navbar-brand ms-4" href="/listings/home"
       ><i class="fa-solid fa-earth-americas"></i
     ></a>
     <button
@@ -93,11 +141,11 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
       <div class="navbar-nav ms-2">
-        <a class="nav-link home" href="/listings">Explore</a>
+        <a class="nav-link home" href="/listings/home">Explore</a>
       </div>
 
       <div class="navbar-nav ms-auto">
-        <form class="form-inline d-flex" method="GET" action="/listings">
+        <form class="form-inline d-flex" method="GET" action="/listings/home">
           <input
             class="form-control me-2 search-input"
             type="search"

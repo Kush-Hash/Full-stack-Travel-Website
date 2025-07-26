@@ -5,7 +5,7 @@
     width: 100vw;
     margin-left: calc(-50vw + 50%);
     height: 100vh;
-    background-image: url("https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?q=80&w=1121&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+    background-image: url("https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -28,7 +28,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: rgba(0, 0, 0, 0.5);
     z-index: 1;
   }
 
@@ -40,6 +40,16 @@
     100% {
       opacity: 1;
       transform: translateY(0);
+    }
+  }
+  @keyframes fadeInDown {
+    0% {
+      opacity: 0;
+      transform: translateY(-30px); /* starts above */
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0); /* comes to original position */
     }
   }
 
@@ -55,6 +65,28 @@
     animation-delay: 0.3s;
     letter-spacing: 3px;
     word-spacing: 8px;
+    margin-bottom: 0.75rem;
+  }
+  .stays-btn {
+    z-index: 2;
+    color: #fff !important;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    padding: 10px 20px;
+    border-radius: 0.5rem;
+    background: rgba(255, 255, 255, 0.1); /* semi-transparent */
+    backdrop-filter: blur(6px); /* ✅ blur background */
+    -webkit-backdrop-filter: blur(6px); /* Safari support */
+    transition: backdrop-filter 0.3s ease, background 0.3s ease;
+
+    opacity: 0; /* Start hidden */
+    animation: fadeInUp 1.2s ease-out forwards;
+    animation-delay: 0.3s;
+  }
+
+  .stays-btn:hover {
+    backdrop-filter: blur(10px); /* 🔁 more blur on hover */
+    -webkit-backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.2); /* slightly brighter */
   }
   #filters {
     display: flex;
@@ -162,13 +194,14 @@
 <!-- Hero Section Start -->
 <div class="hero-section">
   <h1>Where comfort and Charm meet the Aegean</h1>
+  <a href="#places" class="nav-link stays-btn">Veiw Stays</a>
 </div>
 <%- include("../includes/marquee.ejs") %>
 
 <!-- Filter Section -->
 <div id="filters">
   <div class="filter">
-    <a class="filter-link" href="/listings">
+    <a class="filter-link" href="/listings/home">
       <div>
         <i class="fa-solid fa-house"></i>
       </div>
@@ -176,13 +209,13 @@
     </a>
   </div>
   <div class="filter">
-    <a class="filter-link" href="/listings?category=rooms">
+    <a class="filter-link" href="/listings/home?category=rooms">
       <div><i class="fa-solid fa-bed"></i></div>
       <p>Rooms</p>
     </a>
   </div>
   <div class="filter">
-    <a class="filter-link" href="/listings?category=famous_city">
+    <a class="filter-link" href="/listings/home?category=famous_city">
       <div>
         <i class="fa-solid fa-landmark-dome"></i>
       </div>
@@ -190,7 +223,7 @@
     </a>
   </div>
   <div class="filter">
-    <a class="filter-link" href="/listings?category=mountain">
+    <a class="filter-link" href="/listings/home?category=mountain">
       <div>
         <i class="fa-solid fa-mountain"></i>
       </div>
@@ -198,7 +231,7 @@
     </a>
   </div>
   <div class="filter">
-    <a class="filter-link" href="/listings?category=beach">
+    <a class="filter-link" href="/listings/home?category=beach">
       <div>
         <i class="fa-solid fa-umbrella-beach"></i>
       </div>
@@ -206,7 +239,7 @@
     </a>
   </div>
   <div class="filter">
-    <a class="filter-link" href="/listings?category=artic">
+    <a class="filter-link" href="/listings/home?category=artic">
       <div>
         <i class="fa-solid fa-snowman"></i>
       </div>
@@ -214,7 +247,7 @@
     </a>
   </div>
   <div class="filter">
-    <a class="filter-link" href="/listings?category=palace">
+    <a class="filter-link" href="/listings/home?category=palace">
       <div>
         <i class="fa-solid fa-chess-rook"></i>
       </div>
@@ -222,7 +255,7 @@
     </a>
   </div>
   <div class="filter">
-    <a class="filter-link" href="/listings?category=pools">
+    <a class="filter-link" href="/listings/home?category=pools">
       <div>
         <i class="fa-solid fa-person-swimming"></i>
       </div>
@@ -230,19 +263,19 @@
     </a>
   </div>
   <div class="filter">
-    <a class="filter-link" href="/listings?category=camping">
+    <a class="filter-link" href="/listings/home?category=camping">
       <div><i class="fa-solid fa-campground"></i></div>
       <p>Camping</p>
     </a>
   </div>
   <div class="filter">
-    <a class="filter-link" href="/listings?category=farm">
+    <a class="filter-link" href="/listings/home?category=farm">
       <div><i class="fa-solid fa-cow"></i></div>
       <p>Farm</p>
     </a>
   </div>
   <div class="filter">
-    <a class="filter-link" href="/listings?category=forests">
+    <a class="filter-link" href="/listings/home?category=forests">
       <div><i class="fa-solid fa-tree"></i></div>
       <p>Forests</p>
     </a>
@@ -267,6 +300,7 @@
 </div>
 
 <div
+  id="places"
   class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-1 justify-content-center"
 >
   <% for (let listing of allListings) { %>

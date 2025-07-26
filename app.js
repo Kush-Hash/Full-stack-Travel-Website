@@ -85,14 +85,14 @@ app.use((req, res, next) => {
 // app.get('/', (req, res) => {
 //     res.send("Hi I am root");
 // })
+
 app.use((req, res, next) => {
-    res.locals.isHome = req.path === '/' || req.originalUrl === '/listings';
-    // console.log(res.locals.isHome);
+    res.locals.isHome = req.path.startsWith('/listings/home');
     next();
 });
 
 app.get('/', (req, res) => {
-    res.redirect('/listings'); // or render a homepage
+    res.redirect('/listings/home'); // or render a homepage
 });
 //using express router
 app.use("/listings", listingRouter);
