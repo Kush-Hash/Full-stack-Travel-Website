@@ -14,7 +14,6 @@ module.exports.indexPage = async (req, res) => {
     }
 
     if (search) {
-        // Case-insensitive search in title, location, or country
         filter.$or = [
             { title: { $regex: search, $options: "i" } },
             { location: { $regex: search, $options: "i" } },
@@ -23,8 +22,15 @@ module.exports.indexPage = async (req, res) => {
     }
 
     const allListings = await Listing.find(filter);
-    res.render("listings/index.ejs", { allListings, selectedCategory: category, search });
+
+    // 👇 Add a flag to enable the scroll script only for this page
+    res.render("listings/index.ejs", {
+        allListings,
+        selectedCategory: category,
+        search
+    });
 };
+
 
 // Add form Route - SPECIFIC ROUTE FIRST
 module.exports.renderNewForm = (req, res) => {

@@ -1,4 +1,15 @@
 <style>
+  .navbar-transparent {
+    background-color: transparent !important;
+    border: none !important;
+    z-index: 1000;
+  }
+  .navbar-solid {
+    background-color: white !important;
+    border-bottom: 1px solid #e0e0e0 !important;
+    transition: background-color 0.3s ease-in-out, border-bottom 0.5s ease;
+    height: 4rem;
+  }
   .btn-search {
     background-color: #fe424d;
     color: white;
@@ -22,15 +33,52 @@
     box-shadow: 0 0 0 0.2rem rgba(254, 66, 77, 0.25);
     border-color: #fe424d;
   }
+  .home {
+    color: white !important;
+    transition: transform 0.2s ease-in;
+  }
+  .home:hover {
+    transform: scale(1.1); /* Grows to 110% */
+  }
   .hosting-button {
+    color: white !important;
     border-radius: 2rem;
     padding: 0.5rem 1rem !important ;
   }
   .hosting-button:hover {
-    background-color: #fe424f42;
+    background-color: #fff;
+    color: black !important;
+    transition: 0.3s ease;
+  }
+  .navbar-solid .hosting-button:hover {
+    background-color: #fe424d;
+    color: white !important;
+    transition: 0.3s ease;
+  }
+  .navbar-solid .hosting-button,
+  .navbar-solid .home {
+    color: black !important;
+  }
+  .navbar-transparent .nav-btn {
+    color: white !important;
+    border-color: white !important;
+  }
+
+  /* For solid navbar - black text */
+  .navbar-solid .nav-btn {
+    color: black !important;
+    border-color: black !important;
+  }
+  .nav-btn:hover {
+    background-color: #fe424d !important;
+    color: white !important;
+    border-color: #fe424d !important;
   }
 </style>
-<nav class="navbar navbar-expand-lg bg-body-light border-bottom sticky-top">
+<nav
+  id="mainNavbar"
+  class="navbar navbar-expand-lg <%= isHome ? 'navbar-transparent fixed-top' : 'navbar-solid sticky-top shadow-sm' %>"
+>
   <div class="container-fluid">
     <a class="navbar-brand ms-4" href="/listings"
       ><i class="fa-solid fa-earth-americas"></i
@@ -45,7 +93,7 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
       <div class="navbar-nav ms-2">
-        <a class="nav-link" href="/listings">Explore</a>
+        <a class="nav-link home" href="/listings">Explore</a>
       </div>
 
       <div class="navbar-nav ms-auto">
@@ -70,18 +118,18 @@
         >
         <% if(!currUsr){ %>
         <form action="/register">
-          <button class="btn-outline-dark btn ouline-btn-red me-3">
+          <button class="btn-outline-dark btn ouline-btn-red me-3 nav-btn">
             Register
           </button>
         </form>
         <form action="/login">
-          <button class="btn-outline-dark btn ouline-btn-red me-3">
+          <button class="btn-outline-dark btn ouline-btn-red me-3 nav-btn">
             login
           </button>
         </form>
         <%}%> <%if(currUsr){%>
         <form action="/logout">
-          <button class="btn-outline-dark btn ouline-btn-red me-3">
+          <button class="btn-outline-light btn ouline-btn-red me-3 nav-btn">
             Logout
           </button>
         </form>

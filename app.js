@@ -85,6 +85,11 @@ app.use((req, res, next) => {
 // app.get('/', (req, res) => {
 //     res.send("Hi I am root");
 // })
+app.use((req, res, next) => {
+    res.locals.isHome = req.path === '/' || req.originalUrl === '/listings';
+    // console.log(res.locals.isHome);
+    next();
+});
 
 app.get('/', (req, res) => {
     res.redirect('/listings'); // or render a homepage

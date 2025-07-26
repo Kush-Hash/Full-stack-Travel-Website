@@ -17,3 +17,23 @@
         }, false)
     })
 })()
+document.addEventListener("DOMContentLoaded", () => {
+    const navbar = document.getElementById("mainNavbar");
+    const heroSection = document.querySelector(".hero-section");
+
+    if (!navbar || !heroSection) return;
+
+    const heroHeight = heroSection.offsetHeight;
+
+    window.addEventListener("scroll", () => {
+        if (window.scrollY > heroHeight - 80) {
+            navbar.classList.remove("navbar-transparent");
+            navbar.classList.add("navbar-solid");
+        } else {
+            navbar.classList.add("navbar-transparent");
+            navbar.classList.remove("navbar-solid");
+        }
+    });
+
+});
+

@@ -9,9 +9,8 @@ body {
     overflow-x: hidden;
 }
 
-nav {
-    height: 5rem;
-    background-color: white;
+.main-container {
+    padding: 0rem 2.5rem;
 }
 
 .ouline-btn-red:hover {
