@@ -1,42 +1,48 @@
-# 🏨 Travel & Stay Platform
+# 🏨 Wanderlust - Travel & Stay Platform
 
-A full-stack web application inspired by Airbnb, where users can explore, list, and review unique places to stay. Built with Node.js, Express, MongoDB, and EJS — this project includes secure authentication, image uploads, map integration, and a responsive UI.
+A full-stack web application inspired by Airbnb, where users can explore, list, and review unique places to stay. Built using **Node.js, Express, MongoDB, and EJS**, this project includes secure authentication, image uploads, map integration, search/filter features, and a responsive UI.
+
+---
 
 ## 🌐 Live Demo
 
-🔗 [Live Website](https://travel-project-1c08.onrender.com)
+🔗 [Live Website](https://travel-project-1c08.onrender.com/)
+
+---
 
 ## 📸 Features
 
-- **User Authentication**: Register, log in, log out using Passport.js and sessions.
-- **Listings Management**: Create, update, and delete listings with image uploads (Cloudinary).
-- **Reviews System**: Users can add and manage reviews with a 5-star rating system.
-- **Interactive Map**: Listings are geocoded with Mapbox and displayed with markers.
-- **Filtering & Search**: Filter listings by category (beach, mountain, palace, etc.) and search by title or location.
-- **Tax Toggle**: Option to view prices with or without 18% GST.
-- **Responsive UI**: Mobile-first design using Bootstrap 5 and custom CSS.
-- **Secure & Validated**: Joi validation, secure cookies, and authorization checks.
+- 🔐 **User Authentication** – Register, login, logout with session-based auth using Passport.js
+- 🏘️ **Listings Management** – Add, edit, or delete property listings with image uploads via Cloudinary
+- 🌍 **Interactive Map** – Mapbox integration shows geocoded listings with markers
+- ⭐ **Reviews System** – Leave 5-star ratings and comments on listings
+- 🔍 **Filtering & Search** – Filter by category (e.g., beach, palace) and search by title/location
+- 💰 **Tax Toggle** – Show/hide 18% GST on prices using a custom toggle
+- 📱 **Responsive UI** – Clean mobile-first design using Bootstrap 5 and custom CSS
+- 🛡️ **Security & Validation** – Protected routes, cookie security, Joi-based server-side validation
 
 ## 🛠️ Tech Stack
 
-**Frontend**  
-- EJS  
-- Bootstrap 5  
-- Custom CSS  
-- Mapbox GL JS  
+### 🔧 Backend
+- Node.js
+- Express.js
+- MongoDB (Mongoose)
+- Passport.js (authentication)
+- Cloudinary (image hosting)
+- Joi (schema validation)
+- Multer (file handling)
 
-**Backend**  
-- Node.js  
-- Express.js  
-- MongoDB with Mongoose  
-- Cloudinary (for image storage)  
-- Multer & multer-storage-cloudinary  
-- Passport.js (authentication)  
-- Joi (form validation)  
+### 🎨 Frontend
+- EJS templating
+- Bootstrap 5
+- Custom CSS
+- Mapbox GL JS
 
-**Deployment**  
-- Hosted on [Render](https://render.com)  
-- MongoDB Atlas for cloud database  
+### ☁️ Deployment
+- Hosted on Render
+- MongoDB Atlas for cloud DB
+
+---
 
 ## 📂 Project Structure
 ├── app.js # Main application file <br>
@@ -65,7 +71,24 @@ CLOUD_API_KEY=your_cloudinary_api_key
 CLOUD_API_SECRET=your_cloudinary_api_secret
 MAP_TOKEN=your_mapbox_access_token
 ```
-git clone https://github.com/yourusername/your-repo-name.git<br>
-cd your-repo-name<br>
-npm install<br>
-node app.js<br>
+
+---
+
+## 🚀 Installation & Setup
+
+```bash
+# 1. Clone the repository
+git clone https://github.com/Kush-Hash/Full-stack-Travel-Website.git
+
+# 2. Navigate into the project directory
+cd Full-stack-Travel-Website
+
+# 3. Install dependencies
+npm install
+
+# 4. Configure your environment variables
+# (see .env section above)
+
+# 5. Run the application
+node app.js
+
